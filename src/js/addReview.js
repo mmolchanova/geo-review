@@ -15,6 +15,8 @@ export function addReview(point) {
                 position: reviewBlock.dataset.position.split(',')
             }; 
 
+            console.log(point);
+
             makeReview(point);
         }
     })

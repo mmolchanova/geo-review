@@ -6,6 +6,7 @@ export function getPlacemarks(point, newReview) {
     if (placemarksCoords.length) {
         let placemark = new ymaps.Placemark(
             placemarksCoords[placemarksCoords.length - 1], {
+                openBalloonOnClick: false,
                 balloonContentHeader: newReview.place,
                 balloonContentLink: point.address,
                 balloonContentBody: newReview.textReview,

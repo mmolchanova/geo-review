@@ -35,7 +35,9 @@ export function makeReview(point) {
             point.reviews.push(newReview);
             myStorage.items.push(point);
         }                            
-    }     
+    } else {
+        alert('Заполните все поля, чтобы добавить отзыв')
+    } 
 
     const htmlReview = makeFormTemplate(point);
     

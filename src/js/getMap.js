@@ -46,7 +46,7 @@ export function getMap() {
             (async () => {
                 try {     
                     let point = await getPoint(e);
-                    point = await showForm(point);  
+                    point = await showForm(point); 
                 } catch (e) {
                     console.error(e);
                 }
