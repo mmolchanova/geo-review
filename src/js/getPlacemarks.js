@@ -1,12 +1,27 @@
 import { placemarksCoords } from '../index.js';
 
-export function getPlacemarks() {
+import { showForm } from './showForm.js';
+
+export function getPlacemarks(point, newReview) {
     if (placemarksCoords.length) {
-        let placemarks = new ymaps.Placemark(
-            placemarksCoords[placemarksCoords.length - 1], {}, { preset: 'islands#darkOrangeIcon' }
+        let placemark = new ymaps.Placemark(
+            placemarksCoords[placemarksCoords.length - 1], {
+                balloonContentHeader: newReview.place,
+                balloonContentLink: point.address,
+                balloonContentBody: newReview.textReview,
+                balloonContentFooter: newReview.date,
+                balloonContentCoords: point.coords,
+            }, 
+            { 
+                preset: 'islands#darkOrangeIcon'
+            }
         );
 
-    return placemarks;
+        placemark.events.add('click', function (e) {
+            point = showForm(point);    
+        })
+
+    return placemark;
     }     
     return 
 }   

@@ -15,8 +15,7 @@ export function getPoint(e) {
                     address: `${nearest.properties.get('description')}, ${nearest.properties.get('name')}`,
                     coords: coords,
                     position: e.get('domEvent').get('position')
-                };
-                
+                };              
                 return point;
             }
         )

@@ -43,8 +43,8 @@ export function makeReview(point) {
     
     placemarksCoords.push(point.coords);
 
-    let placemarks = getPlacemarks();
-    if (placemarks) {
-        clusterer.add(placemarks); 
+    let placemark = getPlacemarks(point, newReview);
+    if (placemark) {
+        clusterer.add(placemark); 
     }
 }
