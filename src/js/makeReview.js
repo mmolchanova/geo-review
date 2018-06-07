@@ -1,6 +1,8 @@
 import makeFormTemplate from '../templates/makeFormTemplate.hbs';
 import { myStorage } from '../index.js';
 import { placemarksCoords } from '../index.js';
+import { clusterer } from './getMap.js';
+import { getPlacemarks } from './getPlacemarks.js';
 
 export function makeReview(point) {
     const name = document.querySelector('#name');
@@ -40,4 +42,9 @@ export function makeReview(point) {
     reviewBlock.innerHTML = htmlReview;  
     
     placemarksCoords.push(point.coords);
+
+    let placemarks = getPlacemarks();
+    if (placemarks) {
+        clusterer.add(placemarks); 
+    }
 }
