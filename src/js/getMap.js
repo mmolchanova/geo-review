@@ -16,10 +16,10 @@ export function getMap() {
 
         let customItemContentLayout = ymaps.templateLayoutFactory.createClass(
             // Флаг "raw" означает, что данные вставляют "как есть" без экранирования html.
-            '<h2 class=ballon_header>{{ properties.balloonContentHeader|raw }}</h2>' +
-            '<a href="#" class=ballon_link data-coord="{{ properties.balloonContentCoords|raw }}">{{ properties.balloonContentLink|raw }}</a>' +
-            '<div class=ballon_body>{{ properties.balloonContentBody|raw }}</div>' +
-            '<div class=ballon_footer>{{ properties.balloonContentFooter|raw }}</div>'
+            '<div class=ballon__content><h2 class=ballon__header>{{ properties.balloonContentHeader|raw }}</h2>' +
+            '<a href="#" class=ballon__link data-coord="{{ properties.balloonContentCoords|raw }}">{{ properties.balloonContentLink|raw }}</a>' +
+            '<div class=ballon__body>{{ properties.balloonContentBody|raw }}</div>' +
+            '<div class=ballon__footer>{{ properties.balloonContentFooter|raw }}</div></div>'
         );
 
         clusterer = new ymaps.Clusterer({

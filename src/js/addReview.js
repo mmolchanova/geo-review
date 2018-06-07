@@ -14,9 +14,7 @@ export function addReview(point) {
                 coords: reviewBlock.dataset.coord.split(','),
                 position: reviewBlock.dataset.position.split(',')
             }; 
-
-            console.log(point);
-
+            
             makeReview(point);
         }
     })

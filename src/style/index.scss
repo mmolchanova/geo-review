@@ -170,6 +170,36 @@
     padding: 10px 10px;
 }
 
+.ballon__content {
+    height: 160px;
+    width: 100%;
+    position: relative;
+}
+
+.ballon__header {
+    color: #ff8663;
+    font: 400 14px 'Fira Sans', sans-serif; 
+    height: 15px;
+}
+
+.ballon__link {
+    font: 300 12px 'Fira Sans', sans-serif;
+    height: 25px;
+}
+
+.ballon__body {
+    font: 300 12px 'Fira Sans', sans-serif;
+    height: 90px;
+    margin-top: 10px; 
+}
+
+.ballon__footer {
+    font: 300 12px 'Fira Sans', sans-serif;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
 ::-webkit-scrollbar-button {
   background-image:url('');
   background-repeat:no-repeat;
@@ -198,3 +228,4 @@
 ::-webkit-scrollbar{
   width: 4px;
 }
+
