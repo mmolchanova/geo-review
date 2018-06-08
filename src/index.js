@@ -8,15 +8,19 @@ import { addReview } from './js/addReview.js';
 import { clickBallonLink } from './js/clickBallonLink.js';
 
 export let myStorage = {
-    items:[]
+    items : []
 };
-export let placemarksCoords = [];
+if (localStorage.data) {
+    myStorage = JSON.parse(localStorage.data);
+}
 
+export let placemarksCoords = {
+    items : []
+};
 
+     
 getMap();
 closeForm();
 addReview();
 clickBallonLink();
-
-
 

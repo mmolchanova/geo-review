@@ -1,6 +1,7 @@
 import makeFormTemplate from '../templates/makeFormTemplate.hbs';
 import { getPoint } from './getPoint.js';
 import { showForm } from './showForm.js';
+import { getPlacemarks } from './getPlacemarks.js';
 
 export let clusterer;
 
@@ -40,8 +41,9 @@ export function getMap() {
             clusterBalloonPagerSize: 10
         });
 
-        myMap.geoObjects.add(clusterer);      
- 
+        myMap.geoObjects.add(clusterer);
+        getPlacemarks();
+        
         myMap.events.add('click', function (e) {
             (async () => {
                 try {     
