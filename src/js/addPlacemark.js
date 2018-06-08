@@ -18,11 +18,12 @@ export function addPlacemark(point, newReview) {
             }
         );
 
-        placemark.events.add('click', function (e) {
+        placemark.events.add('click', function () {
             point = showForm(point);    
         })
 
-    return placemark;
-    }     
+        return placemark;
+    }
+    
     return 
 }   

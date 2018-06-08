@@ -5,11 +5,12 @@ export function clickBallonLink() {
     document.addEventListener('click', function(e) {
         let elem = e.target;
 
-        if (elem.classList.contains('ballon_link')){
+        if (elem.classList.contains('ballon_link')) {
             e.preventDefault;
             
             let coords = elem.dataset.coord.split(',');
             let myReverseGeocoder = ymaps.geocode(coords);
+
             myReverseGeocoder.then(
                 function (res) {
                     let position = [(e.clientX - 50), (e.clientY + 180)];
@@ -19,14 +20,13 @@ export function clickBallonLink() {
                         coords: coords,
                         position: formPosition(position)
                     };
-                    console.log(point);
 
                     return point;
                 }
             )
-            .then(point => {
-                showForm(point);
-            })
+                .then(point => {
+                    showForm(point);
+                })
         }
     })
 }

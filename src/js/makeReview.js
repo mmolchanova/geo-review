@@ -8,14 +8,15 @@ export function makeReview(point) {
     const name = document.querySelector('#name');
     const place = document.querySelector('#place');
     const textReview = document.querySelector('#textReview');
+    const reviewBlock = document.querySelector('#reviewBlock');
 
     let date = new Date();
     let dateStr = date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear();
     let newReview = {
-        name : name.value,
-        place : place.value,
-        date : dateStr,
-        textReview : textReview.value
+        name: name.value,
+        place: place.value,
+        date: dateStr,
+        textReview: textReview.value
     }
 
     if (name.value && place.value && textReview.value) {                     
@@ -28,7 +29,7 @@ export function makeReview(point) {
                 flag = true;
                 break;
             }            
-        };
+        }
             
         if (flag == false) {
             point.reviews = [];
@@ -44,10 +45,9 @@ export function makeReview(point) {
     reviewBlock.innerHTML = htmlReview;  
     
     placemarksCoords.items.push(point.coords);
-    console.log(point.coords);
-    console.log(newReview);
 
     let placemark = addPlacemark(point, newReview);
+    
     if (placemark) {
         clusterer.add(placemark); 
     }

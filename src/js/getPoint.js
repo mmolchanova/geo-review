@@ -13,12 +13,14 @@ export function getPoint(e) {
         myReverseGeocoder.then(
             function (res) {
                 let position = e.get('domEvent').get('position');
-                let nearest = res.geoObjects.get(0);                       
+                let nearest = res.geoObjects.get(0);  
+                                     
                 let point = {
                     address: `${nearest.properties.get('description')}, ${nearest.properties.get('name')}`,
                     coords: coords,
                     position: formPosition(position)
-                };              
+                };
+
                 return point;
             }
         )

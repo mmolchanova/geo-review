@@ -1,5 +1,6 @@
 export function addDnd(elem) {
-    let currentDrag;        
+    let currentDrag;
+
     elem.draggable = true;    
 
     elem.addEventListener('dragstart', (e) => {
@@ -10,11 +11,11 @@ export function addDnd(elem) {
         e.preventDefault();
     });
 
-
     document.addEventListener('drop', (e) => {
         if (currentDrag) {
             let firstPosition = elem.dataset.position.split(',');  
-            let newPosition = [(firstPosition[0] - currentDrag.position[0] + e.clientX), (firstPosition[1] - currentDrag.position[1] + e.clientY)];
+            let newPosition = [(firstPosition[0] - currentDrag.position[0] + e.clientX),
+                (firstPosition[1] - currentDrag.position[1] + e.clientY)];
 
             elem.setAttribute('data-position', newPosition);
 
@@ -23,4 +24,3 @@ export function addDnd(elem) {
         }
     });   
 }
-

@@ -4,6 +4,7 @@ import { addDnd } from './addDnd.js';
 
 export function showForm(point) {
     const reviewBlock = document.querySelector('#reviewBlock');
+
     addDnd(reviewBlock); 
 
     reviewBlock.setAttribute('data-coord', point.coords);
@@ -16,7 +17,7 @@ export function showForm(point) {
         if (item.address == point.address) {
             reviewsArr.push(...item.reviews);
         }
-    };
+    }
 
     point.reviews = reviewsArr;
 

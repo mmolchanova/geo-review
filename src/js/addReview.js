@@ -1,10 +1,10 @@
 import { makeReview } from './makeReview.js';
 
-export function addReview(point) {
+export function addReview() {
     document.addEventListener('click', function(e) {
         let elem = e.target;
 
-        if (elem.id == 'save'){
+        if (elem.id == 'save') {
             e.preventDefault;
             
             const reviewBlock = document.querySelector('#reviewBlock');
