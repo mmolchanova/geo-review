@@ -21,14 +21,15 @@ export function makeReview(point) {
 
     if (name.value && place.value && textReview.value) {                     
         let flag = false;
-
-        for (const item of myStorage.items) {                       
-            if (item.address == point.address) {
-                item.reviews.push(newReview);
-                point.reviews = item.reviews;
-                flag = true;
-                break;
-            }            
+        if (myStorage.items.length) {
+            for (const item of myStorage.items) {                       
+                if (item.address == point.address) {
+                    item.reviews.push(newReview);
+                    point.reviews = item.reviews;
+                    flag = true;
+                    break;
+                }            
+            }
         }
             
         if (flag == false) {
@@ -47,7 +48,7 @@ export function makeReview(point) {
     placemarksCoords.items.push(point.coords);
 
     let placemark = addPlacemark(point, newReview);
-    
+
     if (placemark) {
         clusterer.add(placemark); 
     }

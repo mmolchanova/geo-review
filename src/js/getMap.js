@@ -45,7 +45,7 @@ export function getMap() {
         myMap.geoObjects.add(clusterer);
 
         if (myStorage.items.length) {
-            getPlacemarks(); 
+            getPlacemarks();
         }
                 
         myMap.events.add('click', function (e) {
